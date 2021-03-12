@@ -1,4 +1,4 @@
-package com.facebook.Browsers;
+package com.wallethub.Browsers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

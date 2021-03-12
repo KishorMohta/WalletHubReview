@@ -1,7 +1,7 @@
 package BaseTests;
 
-import com.facebook.Browsers.StartBrowserActions;
-import com.facebook.utils.Constant;
+import com.wallethub.Browsers.StartBrowserActions;
+import com.wallethub.utils.Constant;
 import org.testng.annotations.Test;
 
 public class StartTest {

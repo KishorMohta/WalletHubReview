@@ -1,4 +1,4 @@
-package com.facebook.utils;
+package com.wallethub.utils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
@@ -82,7 +82,7 @@ public class PageHandler {
     }
 
     public void selectFromDropDown(WebElement element, String value) {
-        javaScriptExecuterClick(element);
+       // javaScriptExecuterClick(element);
         Select dropDown = new Select(element);
         dropDown.selectByValue(value);
     }
@@ -92,10 +92,12 @@ public class PageHandler {
         actions.moveToElement(element).click().perform();
     }
 
-    public void javaScriptExecuterClick(WebElement element) {
+    public void javaScriptExecuterClick() {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-        js.executeScript("arguments[0].click();", element);
+        js.executeAsyncScript("return document.querySelectorAll('g')");
+        System.out.println(js.toString());
+//        js.executeScript("arguments[0].scrollIntoView(true);", element);
+//        js.executeScript("arguments[0].click();", element);
     }
 
     public void jSExecuterScrolldown(WebElement element) {
@@ -122,6 +124,7 @@ public class PageHandler {
     }
 
     protected void click(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
         element.click();
     }
 
